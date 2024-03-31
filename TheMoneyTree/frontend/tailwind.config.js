@@ -10,9 +10,10 @@ module.exports = {
     extend: {
       colors: {
         purple: '#dba4eb', // Remove the curly braces and colon
-        dark: '#1C1C1E',
+        dark: '#76199e',
         'soft-dark': '#2A2A2F', // Wrap the key in quotes if it contains a hyphen
         green: '#32a852',
+        white: '#f5f7f6',
       },
       spacing: {
         '2x': '20px',
