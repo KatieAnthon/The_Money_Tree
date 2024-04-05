@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View, Image } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SignUpScreen from './pages/SignUp';
+import SignUpScreen from './pages/SignUp/SignUp';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Comfortaa_700Bold } from '@expo-google-fonts/comfortaa';
 // import money_tree from './assets/money_tree.png'

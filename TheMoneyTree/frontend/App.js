@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SignUpScreen from './pages/SignUp';
-import LogInScreen from './pages/LogIn';
+import SignUpScreen from './pages/SignUp/SignUp';
+import LogInScreen from './pages/Login/LogIn';
 import HomeScreen from './HomeScreen';
 import { NativeWindStyleSheet } from "nativewind";
 import "./global.css"
