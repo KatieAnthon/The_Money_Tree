@@ -26,4 +26,5 @@ export const isPasswordValid = password => {
     } else if (password.length < 8 && !format.test(password)) {
         return "Password requires at least 8 characters and a special character"
     }
+    return ""
 }

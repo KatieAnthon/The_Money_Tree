@@ -14,9 +14,11 @@ const LogInScreen = ({navigation}) => {
     const userData = {
       "email": email,
       "password": password
-
     }
+
     userString = JSON.stringify(userData)
+
+    console.log("user", userString)
     
     try {
       const response = await fetch("http://192.168.0.102:8080/users/login", {

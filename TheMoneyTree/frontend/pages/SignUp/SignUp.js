@@ -1,5 +1,5 @@
 import React, { useState, Component} from 'react'
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import { isNameValid, isEmailValid, isPasswordValid } from './Validation/isValid'
@@ -55,18 +55,24 @@ const SignUpScreen = ({navigation}) => {
       });
 
       if (response.ok) {
-        console.log("Successfully added your details!")
-        return "Successfully added your details!"
+        const message = await response.text();
+        if (message == "Email already exists") {
+          alert("User already exsits. Please try with a different email.")
+        } else {
+          Alert.alert("Sign up", userData.name + ", you have successfully signed up!",
+          [{
+            text:'OK',
+            onPress: () => 
+              navigation.navigate('LogIn')
+            }
+          ])
+        }
+      } else {
+        alert("Failed to add details. Please try again later")
       }
-
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-
-      const jsonResponse = await response.json();
-      alert(jsonResponse.message);
+      
     } catch (error) {
+      console.error('Error', error)
       alert('Error: ' + error.message);
     }
   };
@@ -99,7 +105,7 @@ const SignUpScreen = ({navigation}) => {
     <Button
         title="Log In"
         onPress={() =>
-            navigation.navigate('Login')   
+            navigation.navigate('LogIn')   
         }
         className="bg-dark text-white font-semibold py-2 px-4 border border-dark rounded mt-2"
         />   
