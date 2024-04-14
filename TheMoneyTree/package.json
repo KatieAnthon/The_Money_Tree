@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-native-pie-chart": "^3.0.2",
+    "tailwind-react-native-classnames": "^1.5.1"
+  }
+}
