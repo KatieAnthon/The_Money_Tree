@@ -20,12 +20,12 @@ const LogInScreen = ({navigation}) => {
     try {
       console.log("Sending login request with user data:", userData);
 
-      const response = await fetch("http://192.168.0.102:8080/users/login", {
+      const response = await fetch("http://192.168.0.15:8080/users/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userData)
+        body: JSON.stringify(userData),
       });
 
       if (response.ok) {
