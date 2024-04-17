@@ -3,6 +3,7 @@ import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import { isNameValid, isEmailValid, isPasswordValid } from './Validation/isValid'
+import PropTypes from 'deprecated-react-native-prop-types';
 
 
 
@@ -81,20 +82,23 @@ const SignUpScreen = ({navigation}) => {
     <View className="flex items-center justify-center h-full bg-purple">
     <Text className="text-l mb-4 text-white" >Sign Up here!</Text>
     
-    <TextInput 
-    placeholder={"Enter your name"}
+    <TextInput
+    data-testid="nameInput" 
+    placeholder="Enter your name"
     onChangeText={text => setName(text)}
     className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg"
     />
     {formErrors.name && <Text style={{ color: 'red' }}>{formErrors.name}</Text>}
 
-    <TextInput 
+    <TextInput
+    data-testid="emailInput"
     placeholder="Enter your email" 
     onChangeText={text => setEmail(text)}
     className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg"/>
     {formErrors.email && <Text style={{ color: 'red' }}>{formErrors.email}</Text>}
 
     <TextInput 
+    data-testid="passwordInput"
     placeholder="Enter your password"
     onChangeText={text => setPassword(text)}
     secureTextEntry={true} 

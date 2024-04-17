@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignUpScreen from './pages/SignUp/SignUp';
 import LogInScreen from './pages/Login/LogIn';
 import HomeScreen from './HomeScreen';
+import SpendAnalysis from './pages/SpendAnalysis/spendAnalysis';
 import { NativeWindStyleSheet } from "nativewind";
 import "./global.css"
 import 'tailwindcss/tailwind.css';
@@ -18,6 +19,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="LogIn" component={LogInScreen} />
+        <Stack.Screen name="SpendA" component={SpendAnalysis} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,23 +1,28 @@
-import React, { Component } from "react"
+import React, { Component, useEffect, useState } from "react"
 import { StyleSheet, ScrollView, Text, View  } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
+import PropTypes from 'deprecated-react-native-prop-types';
 
 
 export default class Chartpie extends Component {
+  
     render() {
         const widthAndHeight = 250
-        const series = [123, 321, 123, 789, 537]
         const sliceColor = [colors.purple.light, colors.pink.light, colors.pink.dark, colors.midnight.default, colors.pink.default]
-
+        
+        if (this.props.datacategories.length === 0) {
+          return null;
+        }
+        
         return (
             <ScrollView style={{ flex: 1 }}>
               <View style={styles.container}>
                 <Text style={styles.title}>Categories</Text>
                 <PieChart
                   widthAndHeight={widthAndHeight}
-                  series={series}
+                  series={this.props.datacategories}
                   sliceColor={sliceColor}
                   coverRadius={0.60}
                   coverFill={sliceColor}

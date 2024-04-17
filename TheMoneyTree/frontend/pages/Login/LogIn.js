@@ -1,7 +1,9 @@
 import React, { useState, Component} from 'react'
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
+import { useNavigate } from '@react-navigation/native';
 import 'tailwindcss/tailwind.css';
+import PropTypes from 'deprecated-react-native-prop-types';
 
 
 
@@ -9,41 +11,41 @@ const LogInScreen = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = async () => {
     const userData = {
-      "email": email,
-      "password": password
-    }
+      email: email,
+      password: password
+    };
 
-    userString = JSON.stringify(userData)
-
-    console.log("user", userString)
-    
     try {
+      console.log("Sending login request with user data:", userData);
+
       const response = await fetch("http://192.168.0.102:8080/users/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: userString
+        body: JSON.stringify(userData)
       });
 
       if (response.ok) {
-        console.log("Successfully logged in!")
+        const jsonResponse = await response.json();
+        console.log("Received response:", jsonResponse);
+        if (jsonResponse && jsonResponse.id) {
+          const userId = jsonResponse.id;
+          navigation.navigate('SpendA', { userId: userId });
+        } else {
+          throw new Error('Unexpected response format: id property not found');
+        }
+      } else {
+        throw new Error('Network response was not ok');
       }
-
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-
-      const jsonResponse = await response.json();
-      alert(jsonResponse.message);
     } catch (error) {
+      console.error('Error:', error);
       alert('Error: ' + error.message);
     }
   };
+  
   
   return (
     <View className="flex items-center justify-center h-full bg-purple">
