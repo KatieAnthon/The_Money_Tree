@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, Text, View  } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
-import PropTypes from 'deprecated-react-native-prop-types';
+
 
 
 export default class Chartpie extends Component {

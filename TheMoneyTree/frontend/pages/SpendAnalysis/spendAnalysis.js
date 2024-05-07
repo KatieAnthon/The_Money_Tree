@@ -5,8 +5,8 @@ import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
 import Chartpie from "./pieChart";
 import { useFocusEffect } from '@react-navigation/native';
-import PropTypes from 'deprecated-react-native-prop-types';
 import UploadStatement from "./uploadStatement";
+
 
 
 
@@ -21,7 +21,7 @@ const SpendAnalysis = ({ navigation, route }) => {
     const fetchData = async () => {
         console.log("fetch data is called:")
         try {
-            const response = await fetch("http://192.168.0.15:8080/spendanalysis/spendtotals", {
+            const response = await fetch("http://192.168.0.102:8080/spendanalysis/spendtotals", {
                 method: 'GET',
             })
             if (response.ok) {

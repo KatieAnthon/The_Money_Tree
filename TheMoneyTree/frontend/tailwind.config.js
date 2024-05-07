@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+
+const nativewind = require("nativewind/tailwind/css")
 const colors = require('tailwindcss/colors');
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
-  content: ["./app/**/*.{js,jsx,ts,tsx}", 
+  content: ["./App.{js,jsx,ts,tsx}", 
   "./components/**/*.{js,ts,jsx,tsx}", 
-  "./pages/**/*.{js,ts,jsx,tsx}",
-],
-  presets: [require("nativewind/preset")],
+  "./pages/**/*.{js,ts,jsx,tsx}"],
+  presets: [],
   theme: {
     extend: {
       colors: {
@@ -45,6 +46,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("nativewind/babel")],
-  customColors: require('tailwindcss/colors'),
+  plugins: [nativewind()],
 }

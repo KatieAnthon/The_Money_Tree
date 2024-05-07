@@ -1,14 +1,21 @@
 import React, { useState, Component} from 'react'
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button as RNButton, StyleSheet, Text as RNText, TextInput as RNTextInput, View as RNView } from 'react-native';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 import { useNavigate } from '@react-navigation/native';
 import 'tailwindcss/tailwind.css';
-import PropTypes from 'deprecated-react-native-prop-types';
+import { StatusBar } from 'expo-status-bar';
+import { styled } from 'nativewind';
+
+const View = styled(RNView)
+const Button = styled(RNButton)
+const Text = styled(RNText)
+const TextInput = styled(RNTextInput)
+
 
 
 
 const LogInScreen = ({navigation}) => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
 
   const handleSubmit = async () => {
@@ -20,7 +27,7 @@ const LogInScreen = ({navigation}) => {
     try {
       console.log("Sending login request with user data:", userData);
 
-      const response = await fetch("http://192.168.0.15:8080/users/login", {
+      const response = await fetch("http://192.168.0.102:8080/users/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
