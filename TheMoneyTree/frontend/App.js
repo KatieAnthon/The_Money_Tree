@@ -5,12 +5,23 @@ import SignUpScreen from './pages/SignUp/SignUp';
 import LogInScreen from './pages/Login/LogIn';
 import HomeScreen from './HomeScreen';
 import SpendAnalysis from './pages/SpendAnalysis/spendAnalysis';
-import "./nativewind-output";
+import "./global.css";
+import { NativeWindStyleSheet } from "nativewind";
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
+
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
 
 
-const Stack = createNativeStackNavigator();
+
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
