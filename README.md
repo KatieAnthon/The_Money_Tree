@@ -7,7 +7,7 @@ __Mock-up created using figma__
 
 ## Getting Started
 
-# Prerequisites:
+### Prerequisites:
 1. Install NPM packages:
    `npm install`
    `npm install expo`
