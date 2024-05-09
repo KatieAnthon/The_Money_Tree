@@ -9,9 +9,9 @@ __Mock-up created using figma__
 
 # Prerequisites:
 1. Install NPM packages:
-   `npm install'
+   `npm install`
    `npm install expo`
-2. Enter your IP address in config.js
+3. Enter your IP address in config.js
   const IP = 'ENTER YOUR IP';
 
 ## Running the app
