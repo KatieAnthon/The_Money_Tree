@@ -6,21 +6,17 @@ import LogInScreen from './pages/Login/LogIn';
 import HomeScreen from './HomeScreen';
 import SpendAnalysis from './pages/SpendAnalysis/spendAnalysis';
 import "./global.css";
-import { NativeWindStyleSheet } from "nativewind";
-import * as SplashScreen from 'expo-splash-screen';
+// import { verifyInstallation } from 'nativewind';
+// import { NativeWindStyleSheet } from "nativewind";
 
-SplashScreen.preventAutoHideAsync();
+// NativeWindStyleSheet.setOutput({
+//   default: "native",
+// });
 
-NativeWindStyleSheet.setOutput({
-  default: "native",
-});
-
-
-
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-
-  const Stack = createNativeStackNavigator();
+  // verifyInstallation();
 
   return (
     <NavigationContainer>

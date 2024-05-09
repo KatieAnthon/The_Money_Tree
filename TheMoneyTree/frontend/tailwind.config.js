@@ -2,9 +2,8 @@
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
   content: [
-    "./app*.{js,jsx,ts,tsx}",
-    "./pages/**/**/*.{js,jsx,ts,tsx}",
-    "./components/**/**/*.{js,jsx,ts,tsx}",
+    "./*.{js,jsx,ts,tsx}", 
+    "./pages/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [require("nativewind/preset")],
   theme: {
@@ -13,7 +12,7 @@ module.exports = {
         purple: {
           default: '#dba4eb',
           light: '#f5d0fe',
-          dark: '#612057',
+          dark: '#62a839',
         },
         'midnight': {
           default:'#9866ea',
@@ -31,6 +30,10 @@ module.exports = {
           light: '#f0abfc',
           dark: '#4a044e'
         },
+
+        green: {
+          default: '#401563'
+        }
         'dark': '#76199e',
         'soft-dark': '#2A2A2F', 
         'green': '#32a852',

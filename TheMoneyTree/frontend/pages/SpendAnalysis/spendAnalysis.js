@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect, useCallback } from "react"
 import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
-import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
 import Chartpie from "./pieChart";

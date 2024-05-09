@@ -7,6 +7,9 @@ import SignUpScreen from './pages/SignUp/SignUp';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Comfortaa_700Bold } from '@expo-google-fonts/comfortaa';
 // import money_tree from './assets/money_tree.png'
+// import * as SplashScreen from 'expo-splash-screen';
+
+// SplashScreen.preventAutoHideAsync();
 
 
 const HomeScreen = ({navigation}) => {

@@ -1,15 +1,17 @@
 import React, { useState, Component} from 'react'
-import { Button as RNButton, StyleSheet, Text as RNText, TextInput as RNTextInput, View as RNView } from 'react-native';
-import { useForm, Controller, useFormState } from 'react-hook-form';
+import { Button, StyleSheet, Text, TextInput, View, Pressable } from 'react-native';
 import { useNavigate } from '@react-navigation/native';
 import 'tailwindcss/tailwind.css';
 import { StatusBar } from 'expo-status-bar';
-import { styled } from 'nativewind';
+import "../../global.css"
 
-const View = styled(RNView)
-const Button = styled(RNButton)
-const Text = styled(RNText)
-const TextInput = styled(RNTextInput)
+
+// import { styled } from 'nativewind';
+
+// const View = styled(RNView)
+// const Button = styled(RNButton)
+// const Text = styled(RNText)
+// const TextInput = styled(RNTextInput)
 
 
 
@@ -55,7 +57,7 @@ const LogInScreen = ({navigation}) => {
   
   
   return (
-    <View className="flex items-center justify-center h-full bg-purple">
+    <View className="flex items-center justify-center h-full bg-purple-default">
     <Text className="text-l mb-4 text-white" >Login here!</Text>
     <TextInput 
     placeholder="Enter your email" 
@@ -66,7 +68,9 @@ const LogInScreen = ({navigation}) => {
     onChangeText={text => setPassword(text)}
     secureTextEntry={true} 
     className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg justify-centre"/>
-    <Button className="bg-dark text-white font-bold py-8 px-5 rounded" title="Submit" onPress={handleSubmit}/>
+    <Pressable className="rounded-lg px-2 flex items-center justify-center bg-purple-dark" title="Submit" onPress={handleSubmit}>
+    <Text className="text-lg text-white font-semibold" >Submit</Text>
+    </Pressable>
 
     <Button
         title="Sign Up"

@@ -1,6 +1,5 @@
 import React, { useState, Component} from 'react'
 import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
-import { useForm, Controller, useFormState } from 'react-hook-form';
 import 'tailwindcss/tailwind.css';
 import { isNameValid, isEmailValid, isPasswordValid } from './Validation/isValid'
 
