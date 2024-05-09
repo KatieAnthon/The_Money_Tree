@@ -12,7 +12,7 @@ __Mock-up created using figma__
    `npm install`
    `npm install expo`
 3. Enter your IP address in config.js
-  const IP = 'ENTER YOUR IP';
+  `const IP = 'ENTER YOUR IP'`;
 
 ## Running the app
 To see this running in expo from your phone:
