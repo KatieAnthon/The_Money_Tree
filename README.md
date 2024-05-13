@@ -7,7 +7,7 @@ The app is designed for users to log in and upload a bank statement to the inter
 __Mock-up created using figma__
 <img width="792" alt="Screenshot 2024-03-25 at 23 38 38" src="https://github.com/KatieAnthon/The_Money_Tree/assets/94082001/c95374e2-7077-45aa-9b00-6b358eeee52c">
 
-For ease of developing an app that's functional across both ios and android i decided to build the frontend utilising React Native (expo) and utlised Tailwind (NativeWind) for UI design. 
+For ease of developing an app that's functional across both ios and android, I decided to build the frontend utilising React Native (expo) and utlised Tailwind (NativeWind) for UI design. 
 
 ## Structure
 
