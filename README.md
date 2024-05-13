@@ -43,7 +43,7 @@ To see this running in expo from your phone:
 `npm start`
 
 ## Backend
-check out the backend https://github.com/KatieAnthon/money_tree_backend/tree/main
+check out the [backend](https://github.com/KatieAnthon/money_tree_backend/tree/main)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
