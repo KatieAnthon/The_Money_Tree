@@ -11,17 +11,30 @@ For ease of developing an app that's functional across both ios and android, I d
 
 ## Structure
 
-Frontend is using React Native, using Type-Based structure: 
+This repo contains the Frontend application: 
 * Components - contains all the files for reusabable components
 * pages - contains different pages of the App.
+
+The frontend application communicated with the backend api via HTTP requests, and need to be run separately.
 
 ## Getting Started
 
 ### Prerequisites:
+If you haven't already, make sure you have node and NVM installed.
+
+1. Install Node Version Manager (NVM)
+   `brew install nvm`
+Then follow the instructions to update your ~/.bash_profile.
+2. Open a new terminal
+3. Install the latest version of Node.js, (20.5.0 at time of writing).
+   `nvm install 20`
+
+## Set up the Project:
 1. Install NPM packages:
+   `cd frontend`
    `npm install`
    `npm install expo`
-3. Enter your IP address in config.js
+3. Enter your IP address in .env
   `const IP = 'ENTER YOUR IP'`;
 
 ## Running the app
