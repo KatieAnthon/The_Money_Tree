@@ -31,6 +31,7 @@ Then follow the instructions to update your ~/.bash_profile.
 
 ## Set up the Project:
 1. Install NPM packages:
+
    `cd frontend`
    
    `npm install`
