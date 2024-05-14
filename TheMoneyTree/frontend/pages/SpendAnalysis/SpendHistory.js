@@ -11,6 +11,7 @@ const SpendHistory = ({navigation}) => {
 return (
     <View className="flex items-center justify-center h-full bg-purple-default">
     <Text className="text-l mb-5 text-white" >Login here</Text>
+    
     </View>
     );
 }

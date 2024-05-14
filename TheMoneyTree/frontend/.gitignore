@@ -2,11 +2,14 @@
 
 # dependencies
 node_modules/
+.zshrc
 
 # Expo
 .expo/
 dist/
 web-build/
+.idea
+
 
 # Native
 *.orig.*

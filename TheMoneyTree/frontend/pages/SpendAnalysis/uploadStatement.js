@@ -1,5 +1,5 @@
 import * as DocumentPicker from 'expo-document-picker';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 
 const UploadStatement = () => {
@@ -32,12 +32,17 @@ const UploadStatement = () => {
     }
 
     return (
-    <Button 
-    title="Upload new Statement" 
+    <Pressable className="bg-dark
+    px-2
+    text-white 
+    border border-dark rounded mt-2
+    hover:bg-slate-300
+    active:bg-slate-500"  
     onPress={() => 
         uploadFileOnPressHandler() 
-    }
-    />
+    } >
+        <Text className="text-lg text-white font-semibold" >Upload Statement</Text>
+    </Pressable>
     )
 }
 export default UploadStatement;
