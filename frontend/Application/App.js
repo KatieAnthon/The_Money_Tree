@@ -7,7 +7,7 @@ import HomeScreen from '../pages/HomeScreen/UI/HomeScreen';
 import SpendAnalysis from '../pages/SpendAnalysis/UI/spendAnalysis';
 import "./global.css";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import SpendHistory from '../pages/SpendAnalysis/SpendHistory';
+import SpendHistory from '../pages/SpendHistory/UI/SpendHistory';
 // import { verifyInstallation } from 'nativewind';
 // import { NativeWindStyleSheet } from "nativewind";
 
