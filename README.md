@@ -21,11 +21,11 @@ The frontend application communicated with the backend api via HTTP requests, an
 If you haven't already, make sure you have node and NVM installed.
 
 1. Install Node Version Manager (NVM)
-   `brew install nvm`
+   ```brew install nvm```
 Then follow the instructions to update your ~/.bash_profile.
 2. Open a new terminal
 3. Install the latest version of Node.js.
-   `nvm install node #node being the latest version`
+   ```nvm install node #node being the latest version```
 
 ## Set up the Project:
 1. Install the latest versions of NPM packages:
