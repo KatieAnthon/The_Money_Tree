@@ -7,8 +7,6 @@ The app is designed for users to log in and upload a bank statement to the inter
 __Mock-up created using figma__
 <img width="792" alt="Screenshot 2024-03-25 at 23 38 38" src="https://github.com/KatieAnthon/The_Money_Tree/assets/94082001/c95374e2-7077-45aa-9b00-6b358eeee52c">
 
-For ease of developing an app that's functional across both ios and android, I decided to build the frontend utilising React Native (expo) and utlised Tailwind (NativeWind) for UI design. 
-
 ## Structure
 
 This repo contains the Frontend application: 
@@ -26,11 +24,11 @@ If you haven't already, make sure you have node and NVM installed.
    `brew install nvm`
 Then follow the instructions to update your ~/.bash_profile.
 2. Open a new terminal
-3. Install the latest version of Node.js, (20.5.0 at time of writing).
-   `nvm install 20`
+3. Install the latest version of Node.js.
+   `nvm install node #node being the latest version`
 
 ## Set up the Project:
-1. Install NPM packages:
+1. Install the latest versions of NPM packages:
 
    `cd frontend`
    
@@ -38,13 +36,15 @@ Then follow the instructions to update your ~/.bash_profile.
    
    `npm install expo`
    
-3. Enter your IP address in .env
+3. Enter your local IP address in .env 
   `const IP = 'ENTER YOUR IP'`;
 
 ## Running the app
 To see this running in expo from your phone:
-`cd frontend`
-`npm start`
+1. `cd frontend`
+2. `npm start`
+3. Scan the barcode (You will need to download Expo Go if you don't have this installed already)
+4. Preview the App on your Iphone or Android device
 
 ## Backend
 check out the [backend](https://github.com/KatieAnthon/money_tree_backend/tree/main)
