@@ -16,6 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.example.themoneytree",
       "config": {
         "usesNonExemptEncryption": false
       }
@@ -28,13 +29,11 @@
     },
     "web": {
       "bundler": "metro",
+      "output": "static",
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-secure-store",
-      // {
-      //   "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
-      // }
+      "expo-secure-store"
     ]
   }
 }

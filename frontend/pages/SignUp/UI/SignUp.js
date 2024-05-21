@@ -14,7 +14,7 @@ const SignUpScreen = ({navigation}) => {
 
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    
 
     const errors = {};
 

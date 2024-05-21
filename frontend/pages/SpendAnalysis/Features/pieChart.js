@@ -1,7 +1,5 @@
 import React, { Component, useEffect, useState } from "react"
 import { StyleSheet, ScrollView, Text, View  } from 'react-native';
-import { useForm, Controller, useFormState } from 'react-hook-form';
-import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
 
 
@@ -32,9 +30,6 @@ export default class Chartpie extends Component {
           )
         }
       }
-
-
-
       const styles = StyleSheet.create({
         container: {
           flex: 1,

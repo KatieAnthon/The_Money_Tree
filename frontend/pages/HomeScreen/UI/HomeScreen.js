@@ -1,15 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View, Image } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import SignUpScreen from '../../SignUp/UI/SignUp';
-import AppLoading from 'expo-app-loading';
+import "../../../global.css"
 import { useFonts, Comfortaa_700Bold } from '@expo-google-fonts/comfortaa';
-// import money_tree from './assets/money_tree.png'
-// import * as SplashScreen from 'expo-splash-screen';
+const tree = require("../assets/money_tree.png");
 
-// SplashScreen.preventAutoHideAsync();
 
 
 const HomeScreen = ({navigation}) => {
@@ -23,7 +19,7 @@ const HomeScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Image 
-            source={require("./assets/money_tree.png")}
+            source={tree}
             style={{width: 120, height: 120}}
              />
             <Text style={styles.textStyle}>Welcome to The Money Tree!</Text>

@@ -5,11 +5,10 @@ import SignUpScreen from '../pages/SignUp/UI/SignUp';
 import LogInScreen from '../pages/Login/UI/LogIn';
 import HomeScreen from '../pages/HomeScreen/UI/HomeScreen';
 import SpendAnalysis from '../pages/SpendAnalysis/UI/spendAnalysis';
-import "./global.css";
+import "../global.css";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SpendHistory from '../pages/SpendHistory/UI/SpendHistory';
-// import { verifyInstallation } from 'nativewind';
-// import { NativeWindStyleSheet } from "nativewind";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,12 +25,6 @@ export default function App() {
         <Stack.Screen name="SpendA" component={SpendAnalysis} />
         <Stack.Screen name="SpendHistory" component={SpendHistory} />
       </Stack.Navigator>
-    {/* </NavigationContainer>
-    <NavigationContainer> */}
-      {/* <Tab.Navigator>
-        <Tab.Screen name="Spend" component={SpendAnalysis} />
-        <Tab.Screen name="History" component={SpendHistory} />
-      </Tab.Navigator> */}
     </NavigationContainer>
   );
 }

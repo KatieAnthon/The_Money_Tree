@@ -2,9 +2,9 @@ import React, { Component, useState, useEffect, useCallback } from "react"
 import { Button, StyleSheet, Text, TextInput, View, Alert, Pressable } from 'react-native';
 import 'tailwindcss/tailwind.css';
 import PieChart from "react-native-pie-chart";
-import Chartpie from "../pieChart";
+import Chartpie from "../Features/pieChart";
 import { useFocusEffect } from '@react-navigation/native';
-import UploadStatement from "../uploadStatement";
+import UploadStatement from "../Features/uploadStatement";
 
 
 
