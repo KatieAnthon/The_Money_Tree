@@ -1,9 +1,8 @@
 import React, { useState, Component} from 'react'
 import { Button, StyleSheet, Text, TextInput, View, Pressable } from 'react-native';
 import { useNavigate } from '@react-navigation/native';
-import 'tailwindcss/tailwind.css';
 import { StatusBar } from 'expo-status-bar';
-import "../../../global.css"
+// import "../../../global.css"
 
 const SpendHistory = ({navigation}) => {
 
