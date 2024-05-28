@@ -14,6 +14,7 @@
     "@expo-google-fonts/comfortaa": "^0.2.3",
     "@expo/metro-runtime": "~3.2.1",
     "@react-native/metro-config": "^0.74.83",
+    "@testing-library/react": "^15.0.7",
     "@types/react": "~18.2.79",
     "amqplib": "^0.10.3",
     "emoji-mart": "^5.6.0",
@@ -55,6 +56,7 @@
   "jest": {
     "verbose": true,
     "preset": "jest-expo",
+    "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|@tailwind)"
     ]

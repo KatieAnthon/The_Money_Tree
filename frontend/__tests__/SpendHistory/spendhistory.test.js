@@ -1,6 +1,7 @@
 //spendhistory.test.js
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 
 import SpendHistory from '../../pages/SpendHistory/UI/SpendHistory';
 
@@ -11,8 +12,14 @@ describe('<SpendHistory />', () => {
       expect(tree.children.length).toBe(1);
     });
 
-    it('shows some data', () => {
-        const data = renderer.create(<SpendHistory />.toJSON());
-        expect(data).to()
+    it('renders the title of the page', async () => {
+        render(<SpendHistory />);
+        expect(screen.getByText('History')).toBeTruthy();
+    
+    })
+
+    it('renders shows some data from the database', () => {
+        render(<SpendHistory />);
+        expect(screen.getByText('Date')).toBeTruthy();
     })
   });
