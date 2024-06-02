@@ -1,10 +1,13 @@
 //spendhistory.test.js
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { screen } from '@testing-library/dom';
 import { render, waitFor } from '@testing-library/react';
-
+import { getByText, findByText } from '@testing-library/react';
 import TransactionsList from '../../pages/SpendHistory/UI/TransactionsList';
 import { fetchTransactions } from '../../api/api';
+
+
 
 jest.mock('../../api/api');
 
@@ -64,14 +67,15 @@ describe('<SpendHistory />', () => {
     });
 
     it('renders the title of the page', async () => {
-        render(<TransactionsList />);
-        expect(screen.findByText('History')).toBeTruthy();
+      render(<TransactionsList />);
+      expect(screen.getByText('History')).toBeTruthy();
+      
     
     })
 
     it('displays transactions correctly', async () => {
       fetchTransactions.mockResolvedValueOnce(mockData);
-      const {findByText} = render(<TransactionsList />);
+      const { findByText } = render(<TransactionsList />);
       await waitFor( async () => {
         for (let transaction of mockData) {
           const textElement = await findByText(`${transaction.date}: ${transaction.name}: ${transaction.amount}`);

@@ -12,25 +12,22 @@ const TransactionsList = ({navigation, route}) => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        const Transactions = async () => {
+        
+        const getData = async () => {
             try {
                 const response = await fetchTransactions();
-                
-
-                if (response.ok) {
-                    const spend = await response.json()
-                    setTransactions(spend)
-                    console.log("spend is set")
-                } else {
-                    alert("data has not been refreshed")
-                }
+                setTransactions(response)
             } catch (error) {
+                console.log("error", error)
                 setError(error)
                 alert('Error' + error.message);
             }
-        }
+        };
+        getData();
 
         }, [])
+
+        
 
 
 return (
@@ -38,11 +35,11 @@ return (
     <Text className="text-l mb-5 text-white" >History</Text>
     <FlatList
     data={transactions}
-    keyExtractor={(item) => item.id}
+    keyExtractor={(item) => item.id.toString()}
     renderItem={({item}) => (
     <View>
         <Text>
-        {item.date}: {item.name} : {item}
+        {item.date}: {item.name} : {item.amount}{item.currency}
     </Text> 
     </View>
 )}
