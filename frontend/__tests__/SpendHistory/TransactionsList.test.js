@@ -1,15 +1,20 @@
 //spendhistory.test.js
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { screen } from '@testing-library/dom';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import { getByText, findByText } from '@testing-library/react';
 import TransactionsList from '../../pages/SpendHistory/UI/TransactionsList';
 import { fetchTransactions } from '../../api/api';
 
 
+global.alert = jest.fn();
 
-jest.mock('../../api/api');
+
+jest.mock('../../api/api', () => ({
+  __esModule: true,
+  fetchTransactions: jest.fn(),
+
+}))
 
 const mockData = [
     {
@@ -60,27 +65,30 @@ const mockData = [
 ];
 
 
-describe('<SpendHistory />', () => {
-    it('has 1 child', () => {
+describe(' transactions list', () => {
+  
+  beforeAll(() => {
+    // Mock implementation of fetchTransactions to return mockData
+    fetchTransactions.mockResolvedValue(mockData);
+  });
+  it('has 1 child', () => {
       const tree = renderer.create(<TransactionsList />).toJSON();
       expect(tree.children.length).toBe(2);
-    });
-
-    it('renders the title of the page', async () => {
-      render(<TransactionsList />);
-      expect(screen.getByText('History')).toBeTruthy();
+  });
+  
+  it('renders the title of the page', async () => {
+    render(<TransactionsList />);
+    expect(screen.getByText('History')).toBeTruthy();
       
-    
-    })
+  })
 
-    it('displays transactions correctly', async () => {
-      fetchTransactions.mockResolvedValueOnce(mockData);
-      const { findByText } = render(<TransactionsList />);
-      await waitFor( async () => {
-        for (let transaction of mockData) {
-          const textElement = await findByText(`${transaction.date}: ${transaction.name}: ${transaction.amount}`);
-          expect(textElement).toBeTruthy();
-        }
-        })
+  it('displays transactions correctly', async () => {
+    render(<TransactionsList />);
+    await waitFor(() => {
+      mockData.forEach(transaction => {
+        expect(screen.getByText(`${transaction.date}: ${transaction.name}: ${transaction.amount}: ${transaction.currency}`)).toBeTruthy();
+        
+      }); 
+      })
     })
   });

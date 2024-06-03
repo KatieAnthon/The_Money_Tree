@@ -34,20 +34,14 @@ return (
     <View className="flex items-center justify-center h-full bg-purple-default">
     <Text className="text-l mb-5 text-white" >History</Text>
     <FlatList
+    keyExtractor={(item) => item.id}
     data={transactions}
-    keyExtractor={(item) => item.id.toString()}
-    renderItem={({item}) => (
-    <View>
-        <Text>
-        {item.date}: {item.name} : {item.amount}{item.currency}
-    </Text> 
+    renderItem={({ item }) => (
+        <Text >{item.date}: {item.name}: {item.amount}: {item.currency}</Text>
+        )}
+        />
     </View>
-)}
-    />
-       
-    
-    </View>
-    );
-}
+)
+    }
 
 export default TransactionsList;
