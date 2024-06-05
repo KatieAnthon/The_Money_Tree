@@ -7,13 +7,14 @@ import HomeScreen from '../pages/HomeScreen/UI/HomeScreen';
 import SpendAnalysis from '../pages/SpendAnalysis/UI/spendAnalysis';
 import "../global.css";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import SpendHistory from '../pages/SpendHistory/UI/TransactionsList';
+import TransactionsList from '../pages/SpendHistory/UI/TransactionsList';
+
 
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+const App = () => {
   // verifyInstallation();
 
   return (
@@ -23,8 +24,10 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="LogIn" component={LogInScreen} />
         <Stack.Screen name="SpendA" component={SpendAnalysis} />
-        <Stack.Screen name="SpendHistory" component={SpendHistory} />
+        <Stack.Screen name="SpendHistory" component={TransactionsList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;

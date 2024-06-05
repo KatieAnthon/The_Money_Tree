@@ -1,7 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import SignUpScreen from '../../SignUp/UI/SignUp';
 import "../../../global.css"
 import { useFonts, Comfortaa_700Bold } from '@expo-google-fonts/comfortaa';
 const tree = require("../assets/money_tree.png");

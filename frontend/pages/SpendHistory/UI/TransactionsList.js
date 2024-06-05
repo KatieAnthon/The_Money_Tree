@@ -2,7 +2,7 @@ import React, { useState, Component, useEffect } from 'react'
 import { Button, StyleSheet, Text, TextInput, View, Pressable, FlatList } from 'react-native';
 import { useNavigate } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-// import "../../../global.css"
+import "../../../global.css"
 import { fetchTransactions } from '../../../api/api';
 
 
