@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, waitFor, screen } from '@testing-library/react';
 import { getByText, findByText } from '@testing-library/react';
-import TransactionsList from '../../pages/SpendHistory/UI/TransactionsList';
+import TransactionsList from '../../app/pages/SpendHistory/UI/TransactionsList';
 import { fetchTransactions } from '../../api/api';
 
 

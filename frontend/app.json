@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./App.js",
     "name": "TheMoneyTree",
     "slug": "TheMoneyTree",
     "version": "1.0.0",
