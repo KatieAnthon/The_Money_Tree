@@ -4,10 +4,16 @@ import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import "../global.css"
 import { useFonts, Comfortaa_700Bold } from '@expo-google-fonts/comfortaa';
 const tree = require("./HomeScreen/assets/money_tree.png");
+import { AuthStore } from "../store";
+import { useRootNavigationState } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 
 
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = () => {
+  const router = useRouter();
+  const { isLoggedIn } = AuthStore.useState((s) => s);
+  const navigationState = useRootNavigationState();
 
     let [fontsLoaded] = useFonts({Comfortaa_700Bold});
 
@@ -23,14 +29,14 @@ const HomeScreen = ({navigation}) => {
              />
             <Text style={styles.textStyle}>Welcome to The Money Tree!</Text>
             <TouchableOpacity
-            onPress={() => navigation.navigate('SignUp')}
+            onPress={() => router.replace("/(auth)/signup")}
             color="white"
             style={styles.ButtonStyle1}
             >
             <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableOpacity>
             <TouchableOpacity
-            onPress={() => navigation.navigate('LogIn')}
+            onPress={() => router.replace("/(auth)/login")}
             color="white"
             style={styles.ButtonStyle2}
             >

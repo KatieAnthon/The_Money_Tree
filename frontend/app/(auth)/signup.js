@@ -1,12 +1,16 @@
 import React, { useState, Component} from 'react'
 import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
 import 'tailwindcss/tailwind.css';
-import { isNameValid, isEmailValid, isPasswordValid } from '../Validation/isValid'
+import { isNameValid, isEmailValid, isPasswordValid } from './Validation/isValid'
+import { Stack, useRouter } from "expo-router";
+import "../../global.css"
 
 
 
 
-const SignUpScreen = ({navigation}) => {
+export default function SignUp() {
+  const router = useRouter();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,7 +67,7 @@ const SignUpScreen = ({navigation}) => {
           [{
             text:'OK',
             onPress: () => 
-              navigation.navigate('LogIn')
+            router.replace("/(tabs)/login")
             }
           ])
         }
@@ -79,6 +83,9 @@ const SignUpScreen = ({navigation}) => {
   
   return (
     <View className="flex items-center justify-center h-full bg-purple">
+      <Stack.screen 
+      options={{title: "signup", headerleft: () => <></>}}
+      />
     <Text className="text-l mb-4 text-white" >Sign Up here!</Text>
     
     <TextInput
@@ -108,7 +115,7 @@ const SignUpScreen = ({navigation}) => {
     <Button
         title="Log In"
         onPress={() =>
-            navigation.navigate('LogIn')   
+          router.replace("/(tabs)/login")   
         }
         className="bg-dark text-white font-semibold py-2 px-4 border border-dark rounded mt-2"
         />   
@@ -117,4 +124,3 @@ const SignUpScreen = ({navigation}) => {
 }
 
 
-export default SignUpScreen;

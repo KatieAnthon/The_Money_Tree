@@ -5,7 +5,7 @@
     "slug": "TheMoneyTree",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "automatic",
     "scheme":"com.example.themoneytree",
     "splash": {

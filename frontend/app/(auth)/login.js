@@ -3,10 +3,13 @@ import { Button, StyleSheet, Text, TextInput, View, Pressable } from 'react-nati
 import { useNavigate } from '@react-navigation/native';
 import 'tailwindcss/tailwind.css';
 import { StatusBar } from 'expo-status-bar';
-import "../../../../global.css"
+import "../../global.css"
+import { AuthStore } from "../../store.js";
+import { Stack, useRouter } from "expo-router";
 
 
-const LogInScreen = ({navigation}) => {
+const LogInScreen = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
 
@@ -33,7 +36,7 @@ const LogInScreen = ({navigation}) => {
         console.log("Received response:", jsonResponse);
         if (jsonResponse && jsonResponse.id) {
           const userId = jsonResponse.id;
-          navigation.navigate('SpendA', { userId: userId });
+          router.replace("/(tabs)/spendanalysis")
         } else {
           throw new Error('Unexpected response format: id property not found');
         }
@@ -49,6 +52,7 @@ const LogInScreen = ({navigation}) => {
   
   return (
     <View className="flex items-center justify-center h-full bg-purple-default">
+      <Stack.Screen options={{ title: "login" }} />
     <Text className="text-l mb-5 text-white" >Login here</Text>
     <TextInput 
     placeholder="Enter your email" 
@@ -75,7 +79,7 @@ const LogInScreen = ({navigation}) => {
     py-2 px-20 border border-dark rounded mt-2
     hover:bg-slate-300
     active:bg-slate-500" onPress={() =>
-            navigation.navigate('SignUp')} >
+      router.replace("/(tabs)/signup")} >
           <Text className="text-lg text-white font-semibold" >Sign Up</Text>
     </Pressable>
       
