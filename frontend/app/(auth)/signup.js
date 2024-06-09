@@ -1,5 +1,5 @@
 import React, { useState, Component} from 'react'
-import { Button, StyleSheet, Text, TextInput, View, Alert } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, Alert, Pressable } from 'react-native';
 import 'tailwindcss/tailwind.css';
 import { isNameValid, isEmailValid, isPasswordValid } from './Validation/isValid'
 import { Stack, useRouter } from "expo-router";
@@ -67,7 +67,7 @@ export default function SignUp() {
           [{
             text:'OK',
             onPress: () => 
-            router.replace("/(tabs)/login")
+            router.replace("(tabs)/login")
             }
           ])
         }
@@ -82,8 +82,8 @@ export default function SignUp() {
   };
   
   return (
-    <View className="flex items-center justify-center h-full bg-purple">
-      <Stack.screen 
+    <View className="flex items-center justify-center h-full bg-purple-default">
+      <Stack.Screen
       options={{title: "signup", headerleft: () => <></>}}
       />
     <Text className="text-l mb-4 text-white" >Sign Up here!</Text>
@@ -92,7 +92,7 @@ export default function SignUp() {
     data-testid="nameInput" 
     placeholder="Enter your name"
     onChangeText={text => setName(text)}
-    className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg"
+    className="border border-white p-2 rounded-md mb-5 w-3/4 text-lg justify-centre"
     />
     {formErrors.name && <Text style={{ color: 'red' }}>{formErrors.name}</Text>}
 
@@ -100,7 +100,7 @@ export default function SignUp() {
     data-testid="emailInput"
     placeholder="Enter your email" 
     onChangeText={text => setEmail(text)}
-    className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg"/>
+    className="border border-white p-2 rounded-md mb-5 w-3/4 text-lg justify-centre"/>
     {formErrors.email && <Text style={{ color: 'red' }}>{formErrors.email}</Text>}
 
     <TextInput 
@@ -108,17 +108,28 @@ export default function SignUp() {
     placeholder="Enter your password"
     onChangeText={text => setPassword(text)}
     secureTextEntry={true} 
-    className="border border-white p-2 rounded-md mb-2 w-3/4 text-lg justify-centre"/>
+    className="border border-white p-2 rounded-md mb-5 w-3/4 text-lg justify-centre active:bg-slate-500"/>
     {formErrors.password && <Text style={{ color: 'red' }}>{formErrors.password}</Text>}
-    <Button className="bg-dark text-white font-bold py-8 px-5 rounded" title="Submit" onPress={handleSubmit}/>
+    <Pressable className="bg-dark 
+    text-white font-semibold 
+    py-2 px-20 border border-dark rounded mt-2
+    hover:bg-slate-300
+    active:bg-slate-500"  
+    onPress={handleSubmit}>
+    <Text className="text-lg text-white font-semibold" >Submit</Text>
+    </Pressable>
 
-    <Button
-        title="Log In"
+    <Pressable className="bg-dark 
+        text-white font-semibold 
+        py-2 px-20 border border-dark rounded mt-2
+        hover:bg-slate-300
+        active:bg-slate-500"
+        
         onPress={() =>
-          router.replace("/(tabs)/login")   
-        }
-        className="bg-dark text-white font-semibold py-2 px-4 border border-dark rounded mt-2"
-        />   
+          router.replace("/login")}>
+            <Text className="text-lg text-white font-semibold" >Log In</Text>
+          </Pressable>
+
         </View> 
   );
 }

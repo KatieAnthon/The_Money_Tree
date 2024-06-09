@@ -36,8 +36,9 @@ const LogInScreen = () => {
         console.log("Received response:", jsonResponse);
         if (jsonResponse && jsonResponse.id) {
           const userId = jsonResponse.id;
-          router.replace("/(tabs)/spendanalysis")
+          router.replace("../(tabs)/spendAnalysis")
         } else {
+          
           throw new Error('Unexpected response format: id property not found');
         }
       } else {
@@ -79,7 +80,7 @@ const LogInScreen = () => {
     py-2 px-20 border border-dark rounded mt-2
     hover:bg-slate-300
     active:bg-slate-500" onPress={() =>
-      router.replace("/(tabs)/signup")} >
+      router.replace("/signup")} >
           <Text className="text-lg text-white font-semibold" >Sign Up</Text>
     </Pressable>
       

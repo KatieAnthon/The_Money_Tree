@@ -9,8 +9,8 @@ import UploadStatement from "../Features/uploadStatement";
 
 
 
-const SpendAnalysis = ({ navigation, route }) => {
-    const { userId } = route.params;
+const SpendAnalysis = () => {
+    const router = useRouter();
     const [dataCategories, setDataCategories] = useState([]);
     const [error, setError] = useState(null);
 
@@ -45,6 +45,7 @@ const SpendAnalysis = ({ navigation, route }) => {
     
 return (
     <View className="flex items-center justify-center h-full bg-purple-default">
+        <Stack.Screen options={{ title: "Spend Analysis" }} />
         <UploadStatement />
         < Chartpie datacategories={dataCategories} />
         <Pressable className= "bg-dark"
