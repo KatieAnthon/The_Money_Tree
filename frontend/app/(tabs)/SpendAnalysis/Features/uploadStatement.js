@@ -32,6 +32,7 @@ const UploadStatement = () => {
     }
 
     return (
+        <Stack.Screen options={{ title: "upload statement" }} >
     <Pressable className="bg-dark
     px-2
     text-white 

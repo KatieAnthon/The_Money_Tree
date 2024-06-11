@@ -5,7 +5,7 @@ import PieChart from "react-native-pie-chart";
 import Chartpie from "../Features/pieChart";
 import { useFocusEffect } from '@react-navigation/native';
 import UploadStatement from "../Features/uploadStatement";
-
+import { Stack, useRouter } from "expo-router";
 
 
 
@@ -13,8 +13,6 @@ const SpendAnalysis = () => {
     const router = useRouter();
     const [dataCategories, setDataCategories] = useState([]);
     const [error, setError] = useState(null);
-
-    console.log("user id ", userId)
   
 
     const fetchData = async () => {
@@ -23,7 +21,7 @@ const SpendAnalysis = () => {
             const response = await fetch("http://192.168.0.102:8080/spendanalysis/spendtotals", {
                 method: 'GET',
             })
-            if (response.ok) {
+            if (response) {
                 const data = await response.json()
                 console.log('Response Data:', data); 
                 setDataCategories(data)
@@ -40,7 +38,7 @@ const SpendAnalysis = () => {
 
     useEffect(() => {
         fetchData();
-    }, [userId]);
+    }, []);
 
     
 return (

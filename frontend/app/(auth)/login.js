@@ -31,16 +31,11 @@ const LogInScreen = () => {
         body: JSON.stringify(userData),
       });
 
-      if (response.ok) {
+      if (response) {
         const jsonResponse = await response.json();
         console.log("Received response:", jsonResponse);
-        if (jsonResponse && jsonResponse.id) {
-          const userId = jsonResponse.id;
-          router.replace("../(tabs)/spendAnalysis")
-        } else {
-          
-          throw new Error('Unexpected response format: id property not found');
-        }
+        router.replace("../(tabs)/SpendAnalysis/UI/spendAnalysis")
+
       } else {
         throw new Error('Network response was not ok');
       }

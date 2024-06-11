@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export const fetchTransactions = async () => {
+export const fetchUser = async () => {
     const response = await fetch ("http://192.168.0.102:8080/users/login", {
         method: 'POST',
         headers: {
