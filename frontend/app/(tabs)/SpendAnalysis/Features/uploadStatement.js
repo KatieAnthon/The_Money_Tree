@@ -32,7 +32,7 @@ const UploadStatement = () => {
     }
 
     return (
-        <Stack.Screen options={{ title: "upload statement" }} >
+
     <Pressable className="bg-dark
     px-2
     text-white 
@@ -44,6 +44,7 @@ const UploadStatement = () => {
     } >
         <Text className="text-lg text-white font-semibold" >Upload Statement</Text>
     </Pressable>
+    
     )
 }
 export default UploadStatement;

@@ -43,12 +43,13 @@ const SpendAnalysis = () => {
     
 return (
     <View className="flex items-center justify-center h-full bg-purple-default">
+        
         <Stack.Screen options={{ title: "Spend Analysis" }} />
         <UploadStatement />
         < Chartpie datacategories={dataCategories} />
         <Pressable className= "bg-dark"
         onPress={() =>
-        navigation.navigate("SpendHistory")} >
+            router.replace("../../SpendHistory/UI/transactionsList")} >
             <Text className="text-white font-semibold" >History</Text>
         </Pressable>
     </View>
