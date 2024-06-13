@@ -4,6 +4,8 @@
 * [Structure](#Structure)
 * [Technologies used](#Technologies-Used)
 * [Getting Started](#Getting-Started)
+   * [Backend](#Backend)
+   * [Frontend](#Frontend)    
 * [Running Tests](#Running-Tests)
 * [Contributing](#Contributing)
   
