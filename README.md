@@ -50,6 +50,8 @@ If you haven't already, make sure you have node and NVM installed.
    ```nvm install node```
 
 ## Set up the Project:
+
+#### Frontend:
 1. Install the latest versions of NPM packages:
 
    ```cd frontend
@@ -60,7 +62,7 @@ If you haven't already, make sure you have node and NVM installed.
       npm install expo
    ```
 
-## Running the app
+##### Running the app
 To see this running in expo from your phone:
 1. start the App:
    ```
@@ -70,7 +72,7 @@ To see this running in expo from your phone:
 2. Scan the **barcode** displayed in the terminal or on the ExpoDevTools webpage using the Expo Go App (Available on iOS and Android)
 3. Preview the App on your Iphone or Android device
 
-## Backend
+#### Backend
 check out the [backend](https://github.com/KatieAnthon/money_tree_backend/tree/main)
 
 1. Navigate to the backend directory:
