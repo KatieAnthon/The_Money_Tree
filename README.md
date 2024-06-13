@@ -92,7 +92,8 @@ To run the tests in the frontend:
 2. Run the Jest tests:
    ```
    npm test
-   ``
+   
+   ```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
