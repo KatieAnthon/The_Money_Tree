@@ -82,6 +82,10 @@ check out the [backend](https://github.com/KatieAnthon/money_tree_backend/tree/m
    ```
    ./gradlew bootRun
    ```
+4. Ensure MongoDB is running:
+   ```
+   mongod --dbpath money-tree-db  
+   ```
 ## Running Tests:
 
 To run the tests in the frontend:
@@ -92,7 +96,6 @@ To run the tests in the frontend:
 2. Run the Jest tests:
    ```
    npm test
-   
    ```
 
 ## Contributing
