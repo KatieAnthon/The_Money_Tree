@@ -1,3 +1,13 @@
+# Table of Contents:
+* [Overview](#Overview)
+* [Design](#Design)
+* [Structure](#Structure)
+* [Technologies used](#Technologies-Used)
+* [Getting Started](#Getting-Started)
+* [Contributing](#Contributing)
+  
+
+
 # The Money Tree
 The Money Tree is a mobile application that helps users optimise their spending habits by breaking down expenses and tracking saving goals.
 
@@ -17,6 +27,12 @@ This repo contains the Frontend application:
 * tabs - contains Transaction History and Spend Analysis pages.
 
 The frontend application communicated with the backend api via HTTP requests, and need to be run separately.
+
+## Technologies Used
+* Frontend: React Native, Expo
+* Backend: Java, Spring Boot, Gradle
+* Testing: Jest
+* Design: Figma
 
 ## Getting Started
 
@@ -49,11 +65,34 @@ To see this running in expo from your phone:
    npm start
    ```
 2. Scan the **barcode** displayed in the terminal or on the ExpoDevTools webpage using the Expo Go App (Available on iOS and Android)
-4. Scan the barcode (You will need to download Expo Go if you don't have this installed already)
-5. Preview the App on your Iphone or Android device
+3. Preview the App on your Iphone or Android device
 
 ## Backend
 check out the [backend](https://github.com/KatieAnthon/money_tree_backend/tree/main)
+
+1. Navigate to the backend directory:
+   ```
+   cd backend
+   ```
+2. Build the backend application:
+   ```
+   ./gradlew build
+   ```
+3. Run the backend application:
+   ```
+   ./gradlew bootRun
+   ```
+## Running Tests:
+
+To run the tests in the frontend:
+1. Navigate to the tests for the frontend:
+   ```
+   cd frontend
+   ```
+2. Run the Jest tests:
+   ```
+   npm test
+   ``
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
